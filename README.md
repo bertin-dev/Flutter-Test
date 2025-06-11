@@ -88,6 +88,8 @@ Vous devez réaliser une mini-application Flutter nommée **ViewerX**, qui perme
 - Implémentation du test dans votre fork.
 - Envoyer l'URL de **votre repository mis à jour**.
 
+<h1>⚠️⚠️ Pas de commit / branche / PullRequest sur ce dépôt Git ⚠️⚠️</h1>
+
 ## ⏱️ Durée estimée
 
 **Samedi 14 le Juin** est le delai de soumission.
