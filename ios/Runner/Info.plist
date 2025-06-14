@@ -47,5 +47,7 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
     <string>Nous avons besoin de la caméra pour scanner votre carte bancaire</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Nous avons besoin d'accéder à votre galerie pour sélectionner une image</string>
 </dict>
 </plist>

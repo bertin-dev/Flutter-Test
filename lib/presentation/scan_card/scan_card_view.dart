@@ -140,10 +140,13 @@ class ScanCardView extends GetView<ScanCardController> {
                             ),
                           ),
                         ),
-                        CircleAvatar(
-                          radius: 34.r,
-                          backgroundColor: Colors.white,
-                          child: const Icon(Icons.photo_camera, color: Colors.black),
+                        GestureDetector(
+                          onTap: controller.pickImageFromGallery,
+                          child: CircleAvatar(
+                            radius: 34.r,
+                            backgroundColor: AppColor.white,
+                            child: const Icon(Icons.photo_camera, color: AppColor.black),
+                          ),
                         ),
                       ],
                     ),

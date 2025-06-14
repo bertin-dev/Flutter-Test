@@ -13,12 +13,12 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<HomeController>();
 
-    const List<BottomNavItemModel> items = [
-      BottomNavItemModel(icon: Icons.home, label: "Accueil"),
-      BottomNavItemModel(icon: Icons.account_balance_wallet, label: "Portefeuille"),
-      BottomNavItemModel(icon: Icons.history, label: ""),
-      BottomNavItemModel(icon: Icons.access_time, label: "Historique"),
-      BottomNavItemModel(icon: Icons.person, label: "Compte"),
+     const List<BottomNavItemModel> items = [
+      BottomNavItemModel(icon: "assets/images/home.png", label: "Accueil"),
+      BottomNavItemModel(icon: "assets/images/wallet.png", label: "Portefeuille"),
+      BottomNavItemModel(icon: "assets/images/send.png", label: ""),
+      BottomNavItemModel(icon: "assets/images/historique.png", label: "Historique"),
+      BottomNavItemModel(icon: "assets/images/user.png", label: "Compte"),
     ];
 
     return Obx(() => Container(
@@ -60,12 +60,13 @@ class CustomBottomNavBar extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                Image.asset(
                   item.icon,
                   color: controller.currentIndex.value == index
                       ? AppColor.primaryColor
                       : Colors.grey,
-                  size: 22.sp,
+                  width: 22.w,
+                  height: 22.h,
                 ),
                 SizedBox(height: 4.h),
                 Text(

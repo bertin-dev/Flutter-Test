@@ -65,16 +65,20 @@
 //   }
 // }
 
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ScanCardController extends GetxController {
   late CameraController cameraController;
   final isCameraInitialized = false.obs;
   final isFlashOn = false.obs;
   final detectedText = ''.obs;
+  final ImagePicker _picker = ImagePicker();
 
   final objectDetector = ObjectDetector(
     options: ObjectDetectorOptions(
@@ -134,5 +138,19 @@ class ScanCardController extends GetxController {
     cameraController.dispose();
     objectDetector.close();
     super.onClose();
+  }
+
+  Future<void> pickImageFromGallery() async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+      if (pickedFile != null) {
+        File image = File(pickedFile.path);
+        print('Image sélectionnée : ${image.path}');
+      } else {
+        print("Aucune image sélectionnée");
+      }
+    } catch (e) {
+      print("Erreur lors de la sélection de l'image : $e");
+    }
   }
 }

@@ -16,14 +16,14 @@ class HomeView extends GetView<HomeController> {
       child: Scaffold(
         body: Obx(() {
           switch (controller.currentIndex.value) {
-            case 0:
-              return const ScanCardView();
             case 1:
               return const TicketView();
             case 2:
+              return const ScanCardView();
+            case 3:
               return const HistoriqueView();
             default:
-              return const Center(child: Text("Compte"));
+              return const Center(child: Text("Compte vide"));
           }
         }),
         bottomNavigationBar: const CustomBottomNavBar(),
